@@ -1,0 +1,43 @@
+<div class="container well weather">
+    <div class="row">
+        <h1>Weather</h1>
+        <h3>know before you go</h3>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <select ng-model="selectedMeasurement" ng-change="getWeather()" ng-options="item for item in measurements"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div ng-if="weatherProvo"class="weatherLocation">
+                <h4>Currently:</h4>
+                {{weatherProvo.currently.apparentTemperature | degrees: selectedMeasurement}}<br>
+                <h5>{{weatherProvo.currently.summary}}</h5>
+                Wind Speed: {{weatherProvo.currently.windSpeed}} mph<br>
+                Precipitation: {{weatherProvo.currently.principProbibility}}%
+                
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div ng-if="weatherSaltLake"class="weatherLocation">
+                <h4>Currently:</h4>
+                {{weatherSaltLake.currently.apparentTemperature | degrees: selectedMeasurement}}<br>
+                <h5>{{weatherSaltLake.currently.summary}}</h5>
+                Wind Speed: {{weatherSaltLake.currently.windSpeed}} mph<br>
+                Precipitation: {{weatherSaltLake.currently.principProbibility}}%
+                
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div ng-if="weatherLehi"class="weatherLocation">
+                <h4>Currently:</h4>
+                {{weatherLehi.currently.apparentTemperature | degrees: selectedMeasurement}}<br>
+                <h5>{{weatherLehi.currently.summary}}</h5>
+                Wind Speed: {{weatherLehi.currently.windSpeed}} mph<br>
+                Precipitation: {{weatherLehi.currently.principProbibility}}%
+                
+            </div>
+        </div>
+    </div>
+</div>
